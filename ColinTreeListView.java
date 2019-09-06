@@ -25,6 +25,7 @@ import com.google.appinventor.components.runtime.EventDispatcher;
 import com.google.appinventor.components.runtime.Form;
 import com.google.appinventor.components.runtime.HVArrangement;
 import com.google.appinventor.components.runtime.HorizontalArrangement;
+import com.google.appinventor.components.runtime.HorizontalScrollArrangement;
 import com.google.appinventor.components.runtime.Label;
 import com.google.appinventor.components.runtime.VerticalArrangement;
 import com.google.appinventor.components.runtime.VerticalScrollArrangement;
@@ -160,14 +161,25 @@ public class ColinTreeListView extends AndroidNonvisibleComponent implements Com
         form = container.$form();
         Log.d(LOG_TAG, "ColinTreeListView Created");
     }
+    
+    @SimpleFunction
+    public void InitializeH(HorizontalArrangement horizontalArrangement) {
+        haContainer = horizontalArrangement;
+        haContainer.AlignHorizontal(ComponentConstants.GRAVITY_CENTER_HORIZONTAL);
+    }
+    @SimpleFunction
+    public void Initialize_HScroll(HorizontalScrollArrangement horizontalScrollArrangement) {
+        haContainer = horizontalScrollArrangement;
+        haContainer.AlignHorizontal(ComponentConstants.GRAVITY_CENTER_HORIZONTAL);
+    }
 
     @SimpleFunction
-    public void Initialize(VerticalArrangement verticalArrangement) {
+    public void InitializeV(VerticalArrangement verticalArrangement) {
         vaContainer = verticalArrangement;
         vaContainer.AlignHorizontal(ComponentConstants.GRAVITY_CENTER_HORIZONTAL);
     }
     @SimpleFunction
-    public void Initialize_Scroll(VerticalScrollArrangement verticalScrollArrangement) {
+    public void Initialize_VScroll(VerticalScrollArrangement verticalScrollArrangement) {
         vaContainer = verticalScrollArrangement;
         vaContainer.AlignHorizontal(ComponentConstants.GRAVITY_CENTER_HORIZONTAL);
     }
